@@ -1,0 +1,32 @@
+<mat-toolbar class="header">
+  <!-- <button (click)="toggleSideBar()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon >menu</mat-icon>
+      </button> -->
+
+  <mat-toolbar-row>
+    <button (click)="toggleSideBar()" mat-icon-button class="example-icon"
+      aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="example-spacer"></span>
+    <button (click)="handelLogOut()" mat-icon-button title="Log Out" class="example-icon"
+      aria-label="Example icon-button with menu icon">
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="logout"></mat-icon>
+    </button>
+  </mat-toolbar-row>
+
+</mat-toolbar>
+<mat-sidenav-container class="example-container" class="sidebar">
+  <mat-sidenav class="sidebarContaint" mode="side" opened={{isOpen}}>
+    <li *ngFor="let item of routes" let a="item.path">
+      <a routerLink={{item.path}} routerLinkActive="active">
+        <span class="menu_title"> {{item.title}}</span>
+      </a>
+    </li>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

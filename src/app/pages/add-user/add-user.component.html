@@ -1,0 +1,35 @@
+<mat-card id="card" class="cardContainer">
+    <mat-card-title class="cardTitle">
+        {{title | uppercase}}
+    </mat-card-title>
+
+    <mat-card-content>
+
+        <form #userDataForm="ngForm" (ngSubmit)="onSubmit(userDataForm.value)">
+            <mat-form-field appearance="outline" class="full-width-field">
+                <mat-label for="name">Name</mat-label>
+                <input matInput name="name" id="'name" ngModel required>
+            </mat-form-field>
+
+            <!-- <mat-form-field appearance="outline" class="full-width-field">
+            <mat-label>Status</mat-label>
+            <input matInput name="status" ngModel required>
+        </mat-form-field> -->
+
+            <mat-form-field appearance="outline" class="full-width-field">
+                <mat-label>Address</mat-label>
+                <input matInput name="address" ngModel required>
+            </mat-form-field>
+
+            <!-- <mat-form-field appearance="outline" class="full-width-field">
+            <mat-label>Mo. Number</mat-label>
+            <input matInput name="number" ngModel required>
+        </mat-form-field> -->
+            <br>
+            <button mat-raised-button class="btnColor" type="submit">Submit</button>
+            <a routerLink="/user" routerLinkActive="active" ariaCurrentWhenActive="page"><button mat-raised-button
+                    class="btnColor"> Cancel</button></a>
+        </form>
+
+
+    </mat-card-content>
